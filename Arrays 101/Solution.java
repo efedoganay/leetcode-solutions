@@ -109,36 +109,28 @@ class Solution {
         boolean validMountain = true;
         boolean maxReached = false;
         boolean minReached = false;
-      
-        if (arr.length >= 3) {
-            
+        if (arr.length >= 3) { 
             for (int i = 0; i < arr.length - 1; i ++) {
-                
                 if (arr[i+1] == arr[i]) {
                     validMountain = false;
                 }
-                
                 else if (arr[i+1] > arr[i]) {
                     maxReached = true;
                     if (minReached) {
                         validMountain = false;
                     }
                 }
-                
                 else if (arr[i+1] < arr[i]) {
                     minReached = true;
                     if (!maxReached) {
                         validMountain = false;
                     }
                 }
-                
             }
         }
-        
         else {
             return false;
         }
-        
         return validMountain && maxReached && minReached;
     }
 
