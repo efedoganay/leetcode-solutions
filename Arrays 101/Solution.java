@@ -63,6 +63,7 @@ class Solution {
             }
         }
     }
+  
  /* 5-) You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, representing the number of elements in nums1 and nums2 respectively. 
         Merge nums1 and nums2 into a single array sorted in non-decreasing order.
         The final sorted array should not be returned by the function, but instead be stored inside the array nums1. 
@@ -80,6 +81,27 @@ class Solution {
                 nums1[i--] = nums2[p2--];
             }
         }
+    }
+  
+ // 6-) Given an array arr of integers, check if there exists two integers N and M such that N is the double of M ( i.e. N = 2 * M).
+    public boolean checkIfExist(int[] arr) {
+        int p1 = 0;
+        int p2 = arr.length - 1;
+        boolean found = false;
+        while (p1 < p2){
+            if (((arr[p1] == arr[p2] / 2)  && arr[p2] % 2 == 0 ) || arr[p1] == 2 * arr[p2]) {
+                found = true;
+                break;
+            }
+            if (p2 == p1 + 1) {
+                p1 ++;
+                p2 = arr.length - 1;
+            }
+            else{
+             p2--;       
+            }
+        }
+        return found;
     }
 
 }
