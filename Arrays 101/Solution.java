@@ -133,5 +133,20 @@ class Solution {
         }
         return validMountain && maxReached && minReached;
     }
+  
+ // 8-) Given an array arr, replace every element in that array with the greatest element among the elements to its right, and replace the last element with -1.
+    public int[] replaceElements(int[] arr) {
+        int last = arr.length - 1;
+        int max = arr[last];
+        for (int i = last; i > 0; i --){
+            int temp = arr[i-1];
+            arr[i-1] = max;
+            if (temp >= max){
+                max = temp;  
+            }
+        }
+        arr[last] = -1;
+        return arr;
+    }
 
 }
