@@ -149,4 +149,22 @@ class Solution {
         return arr;
     }
 
+ // 9-)  Given an integer array nums, move all the even integers at the beginning of the array followed by all the odd integers.
+    public int[] sortArrayByParity(int[] nums) {
+        int i = 0;
+        int j = 0;
+        
+        while(i < nums.length){
+            if (nums[i] % 2 == 0) {
+                int temp = nums[j];
+                nums[j++] = nums[i];
+                nums[i++] = temp;
+            }
+            else {
+                i++;
+            }
+        }
+        return nums;
+    }
+
 }
